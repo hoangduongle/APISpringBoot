@@ -5,6 +5,7 @@ import com.example.apispringboot.repository.AccountRepo;
 import com.example.apispringboot.repository.ConnectionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +25,7 @@ public class AccountAPI {
         return ResponseEntity.ok(accNew);
     }
 
-    @PostMapping("/account/list")
+    @GetMapping("/account/list")
     public ResponseEntity<?> getList(){
         List<Account> list = accountRepo.findAll();
         return ResponseEntity.ok(list);
