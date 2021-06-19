@@ -25,8 +25,8 @@ public class AccountAPI {
     }
 
     @PostMapping("/account/list")
-    public List<Account> getList(){
+    public ResponseEntity<?> getList(){
         List<Account> list = accountRepo.findAll();
-        return list;
+        return ResponseEntity.ok(list);
     }
 }
