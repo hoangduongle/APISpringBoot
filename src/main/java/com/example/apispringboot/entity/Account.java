@@ -16,6 +16,7 @@ public class Account {
     @Id
     @GeneratedValue
     public int id;
+    public String username;
     public String fullName;
     public String avatar;
     public String role;
