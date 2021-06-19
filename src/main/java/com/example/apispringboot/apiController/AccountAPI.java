@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController //restFULL api
+@CrossOrigin
 public class AccountAPI {
 
     @Autowired
@@ -27,7 +28,7 @@ public class AccountAPI {
         return ResponseEntity.ok(list);
     }
 
-    @GetMapping("account/login")
+    @PostMapping("account/login")
     public ResponseEntity<?> checkLogin(@RequestBody Account acc){
         Account accNew = accountRepo.findByUsernameAndPassword(acc.getUsername(),acc.getPassword());
         return ResponseEntity.ok(accNew);
